@@ -1,2 +1,3 @@
 # PyTerminal
-this a terminal made with python
+c'est un terminal écrit avec python
+il y'aura bientôt une interface graphique
