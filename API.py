@@ -8,7 +8,12 @@ while boucle:
     if command == "exit":
         boucle = False
     if command.count("cd") == 1:
-        PATH = command.replace("cd ","")
+        if command.count("cd /") == 1:
+            PATH = command.replace("cd ","")
+        if command.count("cd /") == 0:
+            PATH = os.path.join(PATH,command.replace("cd ",""))
+            a = str(os.system("cd "+PATH))
+            b = False
     if command == "help":
         print("""
         Bienvenue dans le menu d'aide
@@ -18,6 +23,5 @@ while boucle:
         b = False
     if b:
         command = "cd "+PATH+"&&"+command
-        a = os.system(command)
-        a = str(a)
+        a = str(os.system(command))
         print(a.replace("0",""))
